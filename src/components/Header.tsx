@@ -9,11 +9,12 @@ import {
   SheetTrigger,
 } from "@/components/ui/sheet";
 import { Link } from "react-router-dom";
-import { cartData } from "@/utils/demo";
+// import { cartData } from "@/utils/demo";
 import CartItem from "./CartItem";
 import { useState } from "react";
 
 export default function Header() {
+  const cartData: EcomItem[] = [];
   const [sheetOpen, setSheetOpen] = useState<boolean>(false);
   return (
     <div className="z-20 h-16 w-full p-3 justify-between items-center flex border-b sticky top-0 bg-slate-950">

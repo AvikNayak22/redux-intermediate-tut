@@ -4,13 +4,20 @@ import App from "./App.tsx";
 import "./index.css";
 import { BrowserRouter } from "react-router-dom";
 import { ThemeProvider } from "./components/theme-provider.tsx";
+import { Provider } from "react-redux";
+import { persistor, store } from "./redux/store.ts";
+import { PersistGate } from "redux-persist/integration/react";
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
-    <ThemeProvider defaultTheme="dark" storageKey="vite-ui-theme">
-      <BrowserRouter>
-        <App />
-      </BrowserRouter>
-    </ThemeProvider>
+    <Provider store={store}>
+      <PersistGate persistor={persistor}>
+        <ThemeProvider defaultTheme="dark" storageKey="vite-ui-theme">
+          <BrowserRouter>
+            <App />
+          </BrowserRouter>
+        </ThemeProvider>
+      </PersistGate>
+    </Provider>
   </React.StrictMode>
 );

@@ -2,9 +2,11 @@ import CartItem from "@/components/CartItem";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import { cartData } from "@/utils/demo";
+// import { cartData } from "@/utils/demo";
 
 export default function Checkout() {
+  const cartData: EcomItem[] = [];
+
   return (
     <div className="w-full h-[calc(100dvh-64px)] flex justify-center items-center p-3">
       <div className="__checkout_container h-[80%] border rounded p-3 w-full max-w-[900px] bg-slate-900 flex gap-3">
